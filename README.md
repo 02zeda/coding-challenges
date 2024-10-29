@@ -50,3 +50,7 @@ Here is a summary of the challenges I have completed or are currently working on
 | Building wc |     C      | File IO, command line options and arguments    | Completed|
 
 ## 📚 Progress Log
+### Completed C challenges
+- Building wc
+  - Status: Completed
+  - Reflection: This challenge gave me practical experience in reading charactes from files and how one can read from stdin and how reading options from the commandline is done in the best in C. It also thought me about writing maintainable code, since I did not look at the last steps of the challenge. This made me have to rewrite some of my code. 
