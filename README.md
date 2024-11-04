@@ -1,7 +1,7 @@
 # coding-challenges
 A repository of coding challenges that I am working on. These coding challenges can be completed in almost any programming language, and is inteded to be used to improve skills in a particular programming language and programming in general.
 
-The challenges can be found at [https://codingchallenges.fyi/challenges/intro] 
+The challenges can be found at [https://codingchallenges.fyi/challenges/intro](https://codingchallenges.fyi/challenges/intro) 
 ## Why does this repository exist?
 This repository serves as a personal learning log, where I can track my progress as I solve a variety of coding problems and improve my problem-solving abilities. Starting with **C**, 
 I am working through these challenges to build a solid foundation in programming fundamentals, memory management, and algorithmic thinking. It is also an opportunity for me to apply 
