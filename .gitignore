@@ -1,0 +1,36 @@
+
+# Ignore object files and compiled output
+*.o
+*.out
+*.exe
+
+# Ignore any core dumps (often created when a program crashes)
+core
+
+# Ignore any temporary files generated during compilation
+*.gch
+*.obj
+*.lo
+*.la
+
+# Ignore any generated libraries
+*.a
+*.so
+*.dll
+*.dylib
+
+# Ignore debugging files
+*.dSYM/
+*.dS/
+*.pdb
+
+# Ignore backup files
+*~
+
+# Ignore any other compiled or intermediate files
+*.s
+*.i
+
+# Ignore logs and debug output
+*.log
+*.stackdump
