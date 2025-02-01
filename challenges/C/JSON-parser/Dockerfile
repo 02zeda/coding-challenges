@@ -1,0 +1,43 @@
+
+
+FROM ubuntu:latest
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Update the package list and install dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    autoconf \
+    automake \
+    libtool \
+    pkg-config \
+    wget \
+    git \
+    cmake \
+    && apt-get clean
+
+# Install CUnit from source
+WORKDIR /tmp
+RUN wget http://downloads.sourceforge.net/cunit/CUnit-2.1-3.tar.bz2 && \
+    tar -xjf CUnit-2.1-3.tar.bz2 && \
+    cd CUnit-2.1-3 && \
+    ./bootstrap && \
+    ./configure --prefix=/usr/local && \
+    make && \
+    make install && \
+    ldconfig && \
+    cd .. && \
+    rm -rf CUnit-2.1-3 CUnit-2.1-3.tar.bz2
+
+# Set the default working directory in the container
+WORKDIR /app
+
+COPY test/test.c .
+COPY tests .
+COPY include/json_parser.h .
+COPY include/test.h .
+COPY include/main.h .
+COPY src/json_parser.c .
+COPY src/main.c .
+RUN gcc -o test test.c json_parser.c -lcunit
+RUN gcc -o main main.c json_parser.c
+ENTRYPOINT ["./test"]
