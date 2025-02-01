@@ -11,9 +11,7 @@ RUN apt-get update && apt-get install -y \
     libtool \
     pkg-config \
     wget \
-    git \
-    cmake \
-    && apt-get clean
+    gdb
 
 # Install CUnit from source
 WORKDIR /tmp
@@ -38,6 +36,6 @@ COPY include/test.h .
 COPY include/main.h .
 COPY src/json_parser.c .
 COPY src/main.c .
-RUN gcc -o test test.c json_parser.c -lcunit
-RUN gcc -o main main.c json_parser.c
+RUN gcc -g -o test test.c json_parser.c -lcunit
+RUN gcc -g -o main main.c json_parser.c
 ENTRYPOINT ["./test"]

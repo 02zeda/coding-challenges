@@ -28,3 +28,12 @@ As you already know, I have chosen C as my programming language for this challen
 - Be able to automatically run tests for the project.
 - Know how to do tests in C.
 - Have setup all the initial source files.
+
+## Results of Step Zero:
+I decided to create two docker files. One for running the tests and one for being able to run the parser on its own. I did not create a docker compose file, since I am not sure it would help me with automating the compilation process. I decided to use a Makefile for automating commands. It is there to rebuild the images when the source files changes, but also to remove the containers or images when using make clean. It had been some time since I last used one, which was good, because I could spend some time writing and learning about how to construct it again. I set up the testing and divided the source files into a file for the json parser functionality and a main.c file for running the parser (without the tests). I found it was unecesary to use CUnit for the tests, since I could have easily done the same with a python script or a bash script. But it gave some practice in writing tests in C, so it was still a good thing to do.
+
+##  Step One:
+For this step, I will make my parser be able to handle an invalid empty output and the minimal for a JSON file which is "{}". Solving this step is not difficult, but for the next steps, some knowledge of lexing and parsing will be needed.
+
+## Results of Step One:
+I spent a lot of time on debugging and going over my infrastructure again.

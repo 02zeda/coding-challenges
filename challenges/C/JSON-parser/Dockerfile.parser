@@ -1,0 +1,12 @@
+FROM frolvlad/alpine-gcc:latest as builder
+
+COPY src/json_parser.c .
+COPY src/main.c .
+COPY include/json_parser.h .
+COPY include/main.h .
+RUN gcc -g -o main main.c json_parser.c
+
+FROM scratch
+COPY --from=builder main main
+COPY tests tests
+ENTRYPOINT [ "/main" ]

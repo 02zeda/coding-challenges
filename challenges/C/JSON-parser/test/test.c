@@ -1,36 +1,39 @@
 #include "test.h"
 #include "json_parser.h"
-int step_one() {
-    char* tokens[10000] = {0};
+void step_one() {
+    char tokens[10000] = {0};
     FILE* file;
     file = fopen("step1/invalid.json", "r");
     if (file == NULL) {
         printf("invalid.json not found\n");
-        return 1;
+        return;
     }
     get_lex(file,tokens,"");
     file = fopen("step1/valid.json", "r");
+        if (file == NULL) {
+        printf("valid.json not found\n");
+        return;
+    }
     get_lex(file,tokens,"{}");
-    return 0;
 }
-int step_two() {
-    return 0;
+void step_two() {
+
 }
-int step_three() {
-    return 0;
+void step_three() {
+
 }
-int step_four() {
-    return 0;
+void step_four() {
+
 }
 void get_lex(FILE* file,char* tokens,const char *expected_tokens) {
     int return_code = lex(file,tokens);
     CU_ASSERT_EQUAL(return_code,0);
-    CU_ASSERT_STRING_EQUAL(tokens[0],expected_tokens);
+    CU_ASSERT_STRING_EQUAL(tokens, expected_tokens);
 }
 void get_syntax(char* tokens,const char* json) {
     int return_code = syntax(tokens);
     CU_ASSERT_EQUAL(return_code,0);
-    CU_ASSERT_STRING_EQUAL(tokens[0],json);
+    CU_ASSERT_STRING_EQUAL(tokens,json);
 }
 
 int main(int argc, char *argv[]) {
