@@ -36,4 +36,4 @@ I decided to create two docker files. One for running the tests and one for bein
 For this step, I will make my parser be able to handle an invalid empty output and the minimal for a JSON file which is "{}". Solving this step is not difficult, but for the next steps, some knowledge of lexing and parsing will be needed.
 
 ## Results of Step One:
-I spent a lot of time on debugging and going over my infrastructure again.
+I spent a lot of time on debugging and going over my infrastructure again. I had done some initial mistakes when setting up the source files, which led to a lot of debugging to amend those mistakes. For the next step I will spend some time reading in the dragon book to make more informed design decisions for the parser.
